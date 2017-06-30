@@ -6,11 +6,10 @@ class Choices extends Component {
     }
 
     tweetQuote() {
-        alert(this.props.quote);
+        window.open('https://twitter.com/intent/tweet?text=' + this.props.quote + ' - ' + this.props.speaker)
     }
 
     render() {
-        
         return (
             <div className="col-xs-3 col-xs-offset-6">
                 <div><a id="new" href="#" onClick={ this.props.newQuote }>New Quote</a></div>

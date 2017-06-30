@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SpeechBox from './SpeechBox';
 import Choices from './Choices';
+import fetchJsonp from 'fetch-jsonp';
 
 const style = {
     app: {
@@ -18,10 +19,16 @@ class App extends Component {
     }
 
     getNewQuote() {
-        this.setState({
-            speaker: "New Speaker",
-            quote: "New Quote"
-        });
+        var url = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote'
+        fetchJsonp(url, { jsonpCallbackFunction: 'parseQuote' })
+        .then(response => {
+            return response.json()
+        }).then(json => {
+            this.setState({
+                speaker: json.quoteAuthor,
+                quote: json.quoteText
+            });
+        })
     }
 
     render() {
@@ -34,7 +41,7 @@ class App extends Component {
                     <SpeechBox speaker={ this.state.speaker } quote={ this.state.quote } />
                 </div>
                 <div className="row">
-                    <Choices newQuote={ this.getNewQuote.bind(this) } quote={ this.state.quote } />
+                    <Choices newQuote={ this.getNewQuote.bind(this) } quote={ this.state.quote } speaker={ this.state.speaker } />
                 </div>
             </div>
         );
