@@ -1,0 +1,20 @@
+{
+  "name": "fcc_random_quote_machine",
+  "version": "1.0.0",
+  "description": "FCC-RandomQuoteMachine ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loganch/FCC-RandomQuoteMachine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loganch/FCC-RandomQuoteMachine/issues"
+  },
+  "homepage": "https://github.com/loganch/FCC-RandomQuoteMachine#readme"
+}
