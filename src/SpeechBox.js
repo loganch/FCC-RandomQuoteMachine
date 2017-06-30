@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
 var styles = {
-    
+    quote: {
+        textIndent: '-.5em',
+        marginLeft: '.5em'
+    }
 }
 
 class SpeechBox extends Component {
@@ -11,9 +14,9 @@ class SpeechBox extends Component {
 
     render() {
         return (
-            <div className="well col-xs-8 col-xs-offset-2">
-                <p style={ styles.speaker }>{ this.props.speaker }</p>
-                <p>{ this.props.quote }</p>
+            <div className="col-xs-8 col-xs-offset-2" style={ this.props.style }>
+                <p>{ this.props.speaker }</p>
+                <p style={ styles.quote }>&ldquo;{ this.props.quote }&rdquo;</p>
             </div>
         )
     }

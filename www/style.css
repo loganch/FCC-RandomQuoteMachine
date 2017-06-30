@@ -3,3 +3,18 @@ body {
     background-size: cover;
     background-color: #000000;
 }
+
+#options a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+#options a:hover:before {
+    display: inline-block;
+    height: 20px;
+    width: 24px;
+    content: "";
+    background: url('./img/FF7Cursor.png') no-repeat;
+    background-size: 100%;
+}
